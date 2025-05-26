@@ -1,329 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bright Light House Electrical Consultancy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0e1b35;
-            color: #f8f9fa;
-        }
-        .yellow-line {
-            height: 4px;
-            background-color: #ffeb3b;
-            width: 100px;
-            margin: 15px 0;
-        }
-        /* Updated lightning icon styling for better integration */
-        .lightning-graphic {
-            position: relative;
-            /* Removed flickering for a cleaner look */
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0e1b35;
+        color: #f8f9fa;
+      }
+      .yellow-line {
+        height: 4px;
+        background-color: #ffeb3b;
+        width: 100px;
+        margin: 15px 0;
+      }
+      /* Updated lightning icon styling for better integration */
+      .lightning-graphic {
+        position: relative;
+        /* Removed flickering for a cleaner look */
+      }
 
-        /* Futuristic theme styles - refined */
-        .futuristic-title {
-            font-family: 'Orbitron', sans-serif;
-            /* Subtle glow */
-            text-shadow: 0 0 8px rgba(255, 235, 59, 0.6);
-        }
+      /* Futuristic theme styles - refined */
+      .futuristic-title {
+        font-family: "Orbitron", sans-serif;
+        /* Subtle glow */
+        text-shadow: 0 0 8px rgba(255, 235, 59, 0.6);
+      }
 
-        .scroll-indicator {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 50px;
-            border: 2px solid #ffeb3b;
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
+      .scroll-indicator {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 50px;
+        border: 2px solid #ffeb3b;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
 
-        .scroll-indicator::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background-color: #ffeb3b;
-            border-radius: 50%;
-            animation: scroll 1.5s infinite;
-        }
+      .scroll-indicator::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background-color: #ffeb3b;
+        border-radius: 50%;
+        animation: scroll 1.5s infinite;
+      }
 
-        @keyframes scroll {
-            0% { transform: translateY(5px); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(25px); opacity: 0; }
+      @keyframes scroll {
+        0% {
+          transform: translateY(5px);
+          opacity: 0;
         }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(25px);
+          opacity: 0;
+        }
+      }
 
-         .testimonial-card {
-            background-color: #0e1b35;
-            border: 1px solid #ffeb3b40;
-            box-shadow: 0 0 10px #ffeb3b20;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
+      .testimonial-card {
+        background-color: #0e1b35;
+        border: 1px solid #ffeb3b40;
+        box-shadow: 0 0 10px #ffeb3b20;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 15px #ffeb3b40;
-        }
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px #ffeb3b40;
+      }
 
-        .star-rating .fas {
-            color: #ffeb3b;
-        }
+      .star-rating .fas {
+        color: #ffeb3b;
+      }
 
-        /* Styling for the new Services Overview Section */
-        .services-overview-card {
-            background-color: #0e1b35;
-            border: 1px solid #ffeb3b40;
-            box-shadow: 0 0 10px #ffeb3b20;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .services-overview-card:hover {
-             transform: translateY(-5px);
-            box-shadow: 0 0 15px #ffeb3b40;
-        }
+      /* Styling for the new Services Overview Section */
+      .services-overview-card {
+        background-color: #0e1b35;
+        border: 1px solid #ffeb3b40;
+        box-shadow: 0 0 10px #ffeb3b20;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+      .services-overview-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px #ffeb3b40;
+      }
 
-        /* Mobile navigation styles */
+      /* Mobile navigation styles */
+      .mobile-hidden {
+        display: none;
+      }
+      @media (min-width: 768px) {
         .mobile-hidden {
-            display: none;
+          display: flex !important;
         }
-        @media (min-width: 768px) {
-            .mobile-hidden {
-                display: flex !important;
-            }
-        }
-
+      }
     </style>
-</head>
-<body class="min-h-screen flex flex-col">
+  </head>
+  <body class="min-h-screen flex flex-col overflow-x-hidden">
     <!-- Navigation -->
     <nav class="bg-blue-900/50 backdrop-blur-sm py-4 px-6 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
-                <span class="text-xl font-bold">Bright Light House</span>
-            </div>
-            <div id="nav-links" class="hidden md:flex space-x-8 mobile-hidden">
-                <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
-                <a href="about.html" class="hover:text-yellow-400 transition">About</a>
-                <a href="services.html" class="hover:text-yellow-400 transition">Services</a>
-                <a href="gallery.html" class="hover:text-yellow-400 transition">Gallery</a>
-                <a href="contact.html" class="hover:text-yellow-400 transition">Contact</a>
-            </div>
-            <button id = "mobile-menu-button" class="md:hidden text-xl">
-                <i class="fas fa-bars"></i>
-            </button>
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
+          <span class="text-xl font-bold">Bright Light House</span>
         </div>
+        <div
+          id="nav-links"
+          class="md:flex space-x-8 mobile-hidden flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-blue-900/95 md:bg-transparent p-6 md:p-0 rounded-b-lg z-40"
+        >
+          <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
+          <a href="about.html" class="hover:text-yellow-400 transition"
+            >About</a
+          >
+          <a href="services.html" class="hover:text-yellow-400 transition"
+            >Services</a
+          >
+          <a href="gallery.html" class="hover:text-yellow-400 transition"
+            >Gallery</a
+          >
+          <a href="contact.html" class="hover:text-yellow-400 transition"
+            >Contact</a
+          >
+        </div>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-xl"
+          aria-label="Open navigation menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <header id="home" class="relative py-20 px-6 bg-cover bg-center min-h-screen flex items-center" style="background-image: url('https://via.placeholder.com/1920x1080.png?text=Subtle+Futuristic+Background');">
-         <div class="absolute inset-0 bg-black opacity-70"></div>
-        <div class="container mx-auto flex flex-col md:flex-row items-center z-10">
-            <!-- Left Side: Graphic -->
-            <div class="md:w-1/2 mb-12 md:mb-0 flex justify-center" data-aos="fade-right">
-                 <!-- Reverted to the original lightning bolt icon as it matches branding -->
-                <img src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png" alt="Lightning Bolt" class="w-64 h-64 md:w-80 md:h-80 object-contain lightning-graphic">
-            </div>
-            <!-- Right Side: Text and CTA -->
-            <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left">
-              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 futuristic-title">
-                    Bright Light House <span class="text-yellow-400">Electrical Consultancy</span>
-                </h1>
-                 <div class="yellow-line mx-auto md:mx-0"></div>
-                <p class="text-xl md:text-2xl text-gray-300 mt-6">
-                    Leading the future of Energy & Electrical Services
-                </p>
-                <div class="mt-8">
-                     <a href="contact.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300 inline-block">Get a Quote</a>
-                </div>
-            </div>
+    <header
+      id="home"
+      class="relative py-20 px-6 bg-cover bg-center min-h-screen flex items-center"
+      style="
+        background-image: url('https://via.placeholder.com/1920x1080.png?text=Subtle+Futuristic+Background');
+      "
+    >
+      <div class="absolute inset-0 bg-black opacity-70"></div>
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center z-10"
+      >
+        <!-- Left Side: Graphic -->
+        <div
+          class="md:w-1/2 mb-12 md:mb-0 flex justify-center"
+          data-aos="fade-right"
+        >
+          <!-- Reverted to the original lightning bolt icon as it matches branding -->
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png"
+            alt="Lightning Bolt"
+            class="w-64 h-64 md:w-80 md:h-80 object-contain lightning-graphic"
+          />
         </div>
-         <div class="scroll-indicator"></div>
+        <!-- Right Side: Text and CTA -->
+        <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            Bright Light House
+            <span class="text-yellow-400">Electrical Consultancy</span>
+          </h1>
+
+          <div class="yellow-line mx-auto md:mx-0"></div>
+          <p class="text-xl md:text-2xl text-gray-300 mt-6">
+            Leading the future of Energy &amp; Electrical Services
+          </p>
+          <div class="mt-8">
+            <a
+              href="contact.html"
+              class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300 inline-block"
+              >Get a Quote</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator"></div>
     </header>
 
     <!-- Dynamic Content Section (Futuristic Features) -->
     <section id="features" class="py-20 px-6 bg-blue-900/20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Innovations in Energy</h2>
-            <div class="yellow-line mx-auto" data-aos="fade-up" data-aos-delay="100"></div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <!-- Feature 1 -->
-                <div class="p-8 rounded-lg bg-blue-900/50" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-yellow-400 text-5xl mb-4">
-                        <i class="fas fa-home"></i> <!-- Placeholder Icon -->
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Smart Living Solutions</h3>
-                    <p class="text-gray-300">Integrate cutting-edge smart technology into your home for enhanced comfort, security, and energy efficiency.</p>
-                </div>
-                
-                <!-- Feature 2 -->
-                <div class="p-8 rounded-lg bg-blue-900/50" data-aos="fade-up" data-aos-delay="300">
-                     <div class="text-yellow-400 text-5xl mb-4">
-                        <i class="fas fa-leaf"></i> <!-- Placeholder Icon -->
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Eco-Friendly Technology</h3>
-                    <p class="text-gray-300">Implement sustainable electrical solutions that reduce your environmental impact and promote a greener future.</p>
-                </div>
-                
-                <!-- Feature 3 -->
-                <div class="p-8 rounded-lg bg-blue-900/50" data-aos="fade-up" data-aos-delay="400">
-                     <div class="text-yellow-400 text-5xl mb-4">
-                        <i class="fas fa-robot"></i> <!-- Placeholder Icon -->
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Intelligent Home Automation</h3>
-                    <p class="text-gray-300">Experience seamless control over your home's electrical systems with advanced automation and AI integration.</p>
-                </div>
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">
+          Innovations in Energy
+        </h2>
+        <div
+          class="yellow-line mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        ></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <!-- Feature 1 -->
+          <div
+            class="p-8 rounded-lg bg-blue-900/50"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="text-yellow-400 text-5xl mb-4">
+              <i class="fas fa-home"></i>
+              <!-- Placeholder Icon -->
             </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Smart Living Solutions
+            </h3>
+            <p class="text-gray-300">
+              Integrate cutting-edge smart technology into your home for
+              enhanced comfort, security, and energy efficiency.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="p-8 rounded-lg bg-blue-900/50"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="text-yellow-400 text-5xl mb-4">
+              <i class="fas fa-leaf"></i>
+              <!-- Placeholder Icon -->
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Eco-Friendly Technology
+            </h3>
+            <p class="text-gray-300">
+              Implement sustainable electrical solutions that reduce your
+              environmental impact and promote a greener future.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="p-8 rounded-lg bg-blue-900/50"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="text-yellow-400 text-5xl mb-4">
+              <i class="fas fa-robot"></i>
+              <!-- Placeholder Icon -->
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Intelligent Home Automation
+            </h3>
+            <p class="text-gray-300">
+              Experience seamless control over your home's electrical systems
+              with advanced automation and AI integration.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-     <!-- Services Overview Section -->
+    <!-- Services Overview Section -->
     <section id="services-overview" class="py-20 px-6">
-        <div class="container mx-auto flex flex-col md:flex-row items-center gap-12">
-            <!-- Left Side: Image -->
-            <div class="md:w-1/2" data-aos="fade-right">
-                <img src="https://via.placeholder.com/600x400.png?text=Our+Services+Overview" alt="Services Overview" class="rounded-lg object-cover w-full services-overview-card">
-            </div>
-            <!-- Right Side: Text and Link -->
-            <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Comprehensive Electrical Solutions</h2>
-                 <div class="yellow-line mx-auto md:mx-0"></div>
-                <p class="text-lg text-gray-300 mt-6 mb-8">
-                    At Bright Light House, we offer a wide range of electrical consultancy and installation services, from modern smart home setups to robust industrial power systems. Our expertise ensures safe, efficient, and innovative solutions tailored to your needs.
-                </p>
-                <a href="services.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300 inline-block">Explore All Services</a>
-            </div>
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center gap-12"
+      >
+        <!-- Left Side: Image -->
+        <div class="md:w-1/2" data-aos="fade-right">
+          <img
+            src="https://via.placeholder.com/600x400.png?text=Our+Services+Overview"
+            alt="Services Overview"
+            class="rounded-lg object-cover w-full services-overview-card"
+          />
         </div>
+        <!-- Right Side: Text and Link -->
+        <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Comprehensive Electrical Solutions
+          </h2>
+          <div class="yellow-line mx-auto md:mx-0"></div>
+          <p class="text-lg text-gray-300 mt-6 mb-8">
+            At Bright Light House, we offer a wide range of electrical
+            consultancy and installation services, from modern smart home setups
+            to robust industrial power systems. Our expertise ensures safe,
+            efficient, and innovative solutions tailored to your needs.
+          </p>
+          <a
+            href="services.html"
+            class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300 inline-block"
+            >Explore All Services</a
+          >
+        </div>
+      </div>
     </section>
 
-     <!-- Customer Reviews Section -->
+    <!-- Customer Reviews Section -->
     <section id="testimonials" class="py-20 px-6 bg-blue-900/20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">What Our Clients Say</h2>
-            <div class="yellow-line mx-auto" data-aos="fade-up" data-aos-delay="100"></div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card p-6 rounded-lg text-left" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center mb-4">
-                        <img src="https://via.placeholder.com/50" alt="Client Avatar" class="rounded-full mr-4">
-                        <div>
-                            <p class="font-bold text-white">Client Name 1</p>
-                            <div class="star-rating text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-300">"Bright Light House provided exceptional service! Their team was professional, efficient, and the results exceeded our expectations."</p>
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">
+          What Our Clients Say
+        </h2>
+        <div
+          class="yellow-line mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        ></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <!-- Testimonial 1 -->
+          <div
+            class="testimonial-card p-6 rounded-lg text-left"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="Client Avatar"
+                class="rounded-full mr-4"
+              />
+              <div>
+                <p class="font-bold text-white">Client Name 1</p>
+                <div class="star-rating text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
                 </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card p-6 rounded-lg text-left" data-aos="fade-up" data-aos-delay="300">
-                     <div class="flex items-center mb-4">
-                        <img src="https://via.placeholder.com/50" alt="Client Avatar" class="rounded-full mr-4">
-                        <div>
-                            <p class="font-bold text-white">Client Name 2</p>
-                            <div class="star-rating text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-300">"We are thrilled with the smart home solutions installed by Bright Light House. It's made our lives so much easier and more energy-efficient."</p>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card p-6 rounded-lg text-left" data-aos="fade-up" data-aos-delay="400">
-                     <div class="flex items-center mb-4">
-                        <img src="https://via.placeholder.com/50" alt="Client Avatar" class="rounded-full mr-4">
-                        <div>
-                            <p class="font-bold text-white">Client Name 3</p>
-                             <div class="star-rating text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-300">"Highly recommend Bright Light House for their expertise in renewable energy. They guided us through the solar panel installation process seamlessly."</p>
-                </div>
+              </div>
             </div>
+            <p class="text-gray-300">
+              "Bright Light House provided exceptional service! Their team was
+              professional, efficient, and the results exceeded our
+              expectations."
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="testimonial-card p-6 rounded-lg text-left"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="Client Avatar"
+                class="rounded-full mr-4"
+              />
+              <div>
+                <p class="font-bold text-white">Client Name 2</p>
+                <div class="star-rating text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "We are thrilled with the smart home solutions installed by Bright
+              Light House. It's made our lives so much easier and more
+              energy-efficient."
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="testimonial-card p-6 rounded-lg text-left"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://via.placeholder.com/50"
+                alt="Client Avatar"
+                class="rounded-full mr-4"
+              />
+              <div>
+                <p class="font-bold text-white">Client Name 3</p>
+                <div class="star-rating text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-300">
+              "Highly recommend Bright Light House for their expertise in
+              renewable energy. They guided us through the solar panel
+              installation process seamlessly."
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Call to Action Section -->
     <section class="py-16 px-6 text-center bg-blue-900/40" data-aos="fade-up">
-        <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Power Your Future?</h2>
-            <p class="text-xl text-gray-300 mb-8">Contact us today for a consultation and let us light up your world with innovative electrical solutions.</p>
-            <a href="contact.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300 inline-block">Get a Free Quote</a>
-        </div>
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+          Ready to Power Your Future?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Contact us today for a consultation and let us light up your world
+          with innovative electrical solutions.
+        </p>
+        <a
+          href="contact.html"
+          class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300 inline-block"
+          >Get a Free Quote</a
+        >
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-blue-900 py-12 px-6 mt-auto">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
-                        <span class="text-xl font-bold">Bright Light House Electrical Consultancy</span>
-                    </div>
-                    <p class="text-gray-400 mt-2">Energy solutions for a brighter future</p>
-                </div>
-                
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-                        <i class="fab fa-facebook-f text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-                        <i class="fab fa-linkedin-in text-xl"></i>
-                    </a>
-                </div>
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
+              <span class="text-xl font-bold"
+                >Bright Light House Electrical Consultancy</span
+              >
             </div>
-            
-            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-gray-500">
-                <p>&copy; 2023 Bright Light House Electrical Consultancy. All rights reserved.</p>
-            </div>
+            <p class="text-gray-400 mt-2">
+              Energy solutions for a brighter future
+            </p>
+          </div>
+
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+              <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+              <i class="fab fa-linkedin-in text-xl"></i>
+            </a>
+          </div>
         </div>
+
+        <div
+          class="border-t border-blue-800 mt-8 pt-8 text-center text-gray-500"
+        >
+          <p>
+            &copy; 2023 Bright Light House Electrical Consultancy. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: false,
-        });
+      AOS.init({
+        duration: 800,
+        once: false,
+      });
 
-         const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const navLinks = document.getElementById('nav-links');
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const navLinks = document.getElementById("nav-links");
 
-        mobileMenuButton.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-hidden');
-        });
-
+      mobileMenuButton.addEventListener("click", () => {
+        navLinks.classList.toggle("mobile-hidden");
+      });
+      // Hide menu when clicking outside on mobile
+      document.addEventListener("click", (e) => {
+        if (
+          !navLinks.contains(e.target) &&
+          !mobileMenuButton.contains(e.target) &&
+          window.innerWidth < 768
+        ) {
+          navLinks.classList.add("mobile-hidden");
+        }
+      });
     </script>
-</body>
+  </body>
 </html>

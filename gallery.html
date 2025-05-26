@@ -1,154 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery - Bright Light House Electrical Consultancy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
     <style>
-        /* Add any specific styles for gallery.html here */
-        .yellow-line {
-            height: 4px;
-            background-color: #ffeb3b;
-            width: 100px;
-            margin: 15px auto;
-        }
-        /* Keeping original class but AOS will handle animation */
-        .gallery-image {
-           /* opacity: 0;*/
-           /* transform: translateY(20px);*/
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        /* .gallery-image.is-visible {
+      /* Add any specific styles for gallery.html here */
+      .yellow-line {
+        height: 4px;
+        background-color: #ffeb3b;
+        width: 100px;
+        margin: 15px auto;
+      }
+      /* Keeping original class but AOS will handle animation */
+      .gallery-image {
+        /* opacity: 0;*/
+        /* transform: translateY(20px);*/
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      /* .gallery-image.is-visible {
             opacity: 1;
             transform: translateY(0);
         } */
 
-        /* Mobile navigation styles */
-        .mobile-hidden {
-            display: none;
-        }
+      /* Mobile navigation styles */
+      .mobile-hidden {
+        display: none;
+      }
 
-        @media (min-width: 768px) {
-            .mobile-hidden {
-                display: flex !important;
-            }
+      @media (min-width: 768px) {
+        .mobile-hidden {
+          display: flex !important;
         }
+      }
     </style>
-</head>
-<body class="min-h-screen flex flex-col">
+  </head>
+  <body class="min-h-screen flex flex-col overflow-x-hidden">
     <!-- Navigation - Reused from index.html -->
     <nav class="bg-blue-900/50 backdrop-blur-sm py-4 px-6 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
-                <span class="text-xl font-bold">Bright Light House</span>
-            </div>
-            <div  id="nav-links" class="hidden md:flex space-x-8 mobile-hidden">
-                <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
-                <a href="about.html" class="hover:text-yellow-400 transition">About</a>
-                <a href="services.html" class="hover:text-yellow-400 transition">Services</a>
-                <a href="gallery.html" class="hover:text-yellow-400 transition">Gallery</a>
-                <a href="contact.html" class="hover:text-yellow-400 transition">Contact</a>
-            </div>
-            <button  id = "mobile-menu-button" class="md:hidden text-xl">
-                <i class="fas fa-bars"></i>
-            </button>
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
+          <span class="text-xl font-bold">Bright Light House</span>
         </div>
+        <div
+          id="nav-links"
+          class="md:flex space-x-8 mobile-hidden flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-blue-900/95 md:bg-transparent p-6 md:p-0 rounded-b-lg z-40"
+        >
+          <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
+          <a href="about.html" class="hover:text-yellow-400 transition"
+            >About</a
+          >
+          <a href="services.html" class="hover:text-yellow-400 transition"
+            >Services</a
+          >
+          <a href="gallery.html" class="hover:text-yellow-400 transition"
+            >Gallery</a
+          >
+          <a href="contact.html" class="hover:text-yellow-400 transition"
+            >Contact</a
+          >
+        </div>
+        <button id="mobile-menu-button" class="md:hidden text-xl" aria-label="Open navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </nav>
 
     <!-- Gallery Section -->
     <section id="gallery" class="flex-grow py-20 px-6">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Project Gallery</h2>
-            <div class="yellow-line mx-auto" data-aos="fade-up" data-aos-delay="100"></div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-                <!-- Gallery Item 1 -->
-                <div class="gallery-image bg-blue-900/50 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="200">
-                    <img src="images/1.png" alt="Project Image 1" class="rounded-lg object-cover w-full h-64">
-                    <p class="mt-3 text-gray-300">Description of Project 1</p>
-                </div>
-                
-                <!-- Gallery Item 2 -->
-                <div class="gallery-image bg-blue-900/50 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="300">
-                    <img src="images/2.png" alt="Project Image 2" class="rounded-lg object-cover w-full h-64">
-                    <p class="mt-3 text-gray-300">Description of Project 2</p>
-                </div>
-                
-                <!-- Add more gallery items here -->
-                 <div class="gallery-image bg-blue-900/50 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://via.placeholder.com/400x300.png?text=Project+Image+3" alt="Project Image 3" class="rounded-lg object-cover w-full h-64">
-                    <p class="mt-3 text-gray-300">Description of Project 3</p>
-                </div>
-                 <div class="gallery-image bg-blue-900/50 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="250">
-                    <img src="https://via.placeholder.com/400x300.png?text=Project+Image+4" alt="Project Image 4" class="rounded-lg object-cover w-full h-64">
-                    <p class="mt-3 text-gray-300">Description of Project 4</p>
-                </div>
-                 <div class="gallery-image bg-blue-900/50 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="350">
-                    <img src="https://via.placeholder.com/400x300.png?text=Project+Image+5" alt="Project Image 5" class="rounded-lg object-cover w-full h-64">
-                    <p class="mt-3 text-gray-300">Description of Project 5</p>
-                </div>
-                 <div class="gallery-image bg-blue-900/50 p-4 rounded-lg" data-aos="fade-up" data-aos-delay="450">
-                    <img src="https://via.placeholder.com/400x300.png?text=Project+Image+6" alt="Project Image 6" class="rounded-lg object-cover w-full h-64">
-                    <p class="mt-3 text-gray-300">Description of Project 6</p>
-                </div>
-            </div>
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">
+          Project Gallery
+        </h2>
+        <div
+          class="yellow-line mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        ></div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <!-- Gallery Item 1 -->
+          <div
+            class="gallery-image bg-blue-900/50 p-4 rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="images/1.png"
+              alt="Project Image 1"
+              class="rounded-lg object-cover w-full h-64"
+            />
+            <p class="mt-3 text-gray-300">Description of Project 1</p>
+          </div>
+
+          <!-- Gallery Item 2 -->
+          <div
+            class="gallery-image bg-blue-900/50 p-4 rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <img
+              src="images/2.png"
+              alt="Project Image 2"
+              class="rounded-lg object-cover w-full h-64"
+            />
+            <p class="mt-3 text-gray-300">Description of Project 2</p>
+          </div>
+
+          <!-- Add more gallery items here -->
+          <div
+            class="gallery-image bg-blue-900/50 p-4 rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <img
+              src="https://via.placeholder.com/400x300.png?text=Project+Image+3"
+              alt="Project Image 3"
+              class="rounded-lg object-cover w-full h-64"
+            />
+            <p class="mt-3 text-gray-300">Description of Project 3</p>
+          </div>
+          <div
+            class="gallery-image bg-blue-900/50 p-4 rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <img
+              src="https://via.placeholder.com/400x300.png?text=Project+Image+4"
+              alt="Project Image 4"
+              class="rounded-lg object-cover w-full h-64"
+            />
+            <p class="mt-3 text-gray-300">Description of Project 4</p>
+          </div>
+          <div
+            class="gallery-image bg-blue-900/50 p-4 rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="350"
+          >
+            <img
+              src="https://via.placeholder.com/400x300.png?text=Project+Image+5"
+              alt="Project Image 5"
+              class="rounded-lg object-cover w-full h-64"
+            />
+            <p class="mt-3 text-gray-300">Description of Project 5</p>
+          </div>
+          <div
+            class="gallery-image bg-blue-900/50 p-4 rounded-lg"
+            data-aos="fade-up"
+            data-aos-delay="450"
+          >
+            <img
+              src="https://via.placeholder.com/400x300.png?text=Project+Image+6"
+              alt="Project Image 6"
+              class="rounded-lg object-cover w-full h-64"
+            />
+            <p class="mt-3 text-gray-300">Description of Project 6</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Call to Action Section -->
     <section class="py-16 px-6 text-center bg-blue-900/40" data-aos="fade-up">
-        <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Power Your Future?</h2>
-            <p class="text-xl text-gray-300 mb-8">Contact us today for a consultation and let us light up your world with innovative electrical solutions.</p>
-            <a href="contact.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300 inline-block">Get a Free Quote</a>
-        </div>
+      <div class="container mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+          Ready to Power Your Future?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Contact us today for a consultation and let us light up your world
+          with innovative electrical solutions.
+        </p>
+        <a
+          href="contact.html"
+          class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300 inline-block"
+          >Get a Free Quote</a
+        >
+      </div>
     </section>
 
     <!-- Footer - Reused from index.html -->
     <footer class="bg-blue-900 py-12 px-6 mt-auto">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
-                        <span class="text-xl font-bold">Bright Light House Electrical Consultancy</span>
-                    </div>
-                    <p class="text-gray-400 mt-2">Energy solutions for a brighter future</p>
-                </div>
-                
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-                        <i class="fab fa-facebook-f text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-                        <i class="fab fa-linkedin-in text-xl"></i>
-                    </a>
-                </div>
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <div class="flex items-center space-x-2">
+              <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
+              <span class="text-xl font-bold"
+                >Bright Light House Electrical Consultancy</span
+              >
             </div>
-            
-            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-gray-500">
-                <p>&copy; 2023 Bright Light House Electrical Consultancy. All rights reserved.</p>
-            </div>
+            <p class="text-gray-400 mt-2">
+              Energy solutions for a brighter future
+            </p>
+          </div>
+
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+              <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+              <i class="fab fa-twitter text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+              <i class="fab fa-linkedin-in text-xl"></i>
+            </a>
+          </div>
         </div>
+
+        <div
+          class="border-t border-blue-800 mt-8 pt-8 text-center text-gray-500"
+        >
+          <p>
+            &copy; 2023 Bright Light House Electrical Consultancy. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: false,
-        });
-         // The old simple scroll animation script is commented out as AOS is now used.
-        /*
+      AOS.init({
+        duration: 800,
+        once: false,
+      });
+      // The old simple scroll animation script is commented out as AOS is now used.
+      /*
         document.addEventListener('DOMContentLoaded', () => {
             const galleryImages = document.querySelectorAll('.gallery-image');
 
@@ -169,12 +258,22 @@
         });
         */
 
-         const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const navLinks = document.getElementById('nav-links');
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const navLinks = document.getElementById("nav-links");
 
-        mobileMenuButton.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-hidden');
-        });
+      mobileMenuButton.addEventListener("click", () => {
+        navLinks.classList.toggle("mobile-hidden");
+      });
+      // Hide menu when clicking outside on mobile
+      document.addEventListener("click", (e) => {
+        if (
+          !navLinks.contains(e.target) &&
+          !mobileMenuButton.contains(e.target) &&
+          window.innerWidth < 768
+        ) {
+          navLinks.classList.add("mobile-hidden");
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
