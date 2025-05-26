@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Bright Light House Electrical Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add any specific styles for services.html here if needed */
+        .yellow-line {
+            height: 4px;
+            background-color: #ffeb3b;
+            width: 100px;
+            margin: 15px auto;
+        }
+         .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Mobile navigation styles */
+        .mobile-hidden {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-hidden {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation - Reused from index.html -->
+    <nav class="bg-blue-900/50 backdrop-blur-sm py-4 px-6 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
+                <span class="text-xl font-bold">Bright Light House</span>
+            </div>
+            <div  id="nav-links" class="hidden md:flex space-x-8 mobile-hidden">
+                <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
+                <a href="about.html" class="hover:text-yellow-400 transition">About</a>
+                <a href="services.html" class="hover:text-yellow-400 transition">Services</a>
+                <a href="gallery.html" class="hover:text-yellow-400 transition">Gallery</a>
+                <a href="contact.html" class="hover:text-yellow-400 transition">Contact</a>
+            </div>
+            <button  id = "mobile-menu-button" class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section id="services-page" class="flex-grow py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">Our Services</h2>
+            <div class="yellow-line mx-auto" data-aos="fade-up" data-aos-delay="100"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-blue-900/50 p-8 rounded-lg transition duration-300 text-left" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-400/20 p-3 rounded-full mr-4">
+                            <i class="fas fa-plug text-yellow-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Power Systems Design & Maintenance</h3>
+                    </div>
+                    <p class="text-gray-300">We provide expert design for new electrical power systems and comprehensive maintenance plans for existing infrastructure to ensure safety, reliability, and efficiency. Our services cover everything from low-voltage distribution to high-voltage substations.</p>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-blue-900/50 p-8 rounded-lg transition duration-300 text-left" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-400/20 p-3 rounded-full mr-4">
+                            <i class="fas fa-solar-panel text-yellow-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Solar & Renewable Energy Solutions</h3>
+                    </div>
+                    <p class="text-gray-300">Embrace sustainable energy with our solar panel installation, system design, and integration services. We also offer solutions for other renewable sources, helping you reduce your carbon footprint and energy costs.</p>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-blue-900/50 p-8 rounded-lg transition duration-300 text-left" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-400/20 p-3 rounded-full mr-4">
+                            <i class="fas fa-network-wired text-yellow-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Smart Grid & Electrical Installations</h3>
+                    </div>
+                    <p class="text-gray-300">Upgrade to the future with smart grid technologies and modern electrical installations. We handle all types of installations, from residential wiring to complex industrial systems, ensuring compliance with the latest standards.</p>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-blue-900/50 p-8 rounded-lg transition duration-300 text-left" data-aos="fade-up" data-aos-delay="250">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-400/20 p-3 rounded-full mr-4">
+                            <i class="fas fa-video text-yellow-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">CCTV & Security Systems</h3>
+                    </div>
+                    <p class="text-gray-300">Protect your property with our comprehensive security solutions, including CCTV surveillance system design and installation, access control, and integrated alarm systems tailored to your specific security needs.</p>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card bg-blue-900/50 p-8 rounded-lg transition duration-300 text-left" data-aos="fade-up" data-aos-delay="350">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-400/20 p-3 rounded-full mr-4">
+                            <i class="fas fa-lightbulb text-yellow-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Lighting & Energy Optimization</h3>
+                    </div>
+                    <p class="text-gray-300">Optimize your energy consumption and enhance your space with our energy-efficient lighting designs and retrofits. We also conduct energy audits to identify areas for improvement and implement cost-saving measures.</p>
+                </div>
+                
+                 <!-- Service Card 6 -->
+                <div class="service-card bg-blue-900/50 p-8 rounded-lg transition duration-300 text-left" data-aos="fade-up" data-aos-delay="450">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-400/20 p-3 rounded-full mr-4">
+                            <i class="fas fa-cogs text-yellow-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Custom Electrical Solutions</h3>
+                    </div>
+                    <p class="text-gray-300">We offer tailored electrical solutions for unique projects and specialized requirements. Our team works closely with clients to understand their needs and deliver custom designs and installations that meet specific challenges and objectives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 px-6 text-center bg-blue-900/40" data-aos="fade-up">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Power Your Future?</h2>
+            <p class="text-xl text-gray-300 mb-8">Contact us today for a consultation and let us light up your world with innovative electrical solutions.</p>
+            <a href="contact.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300 inline-block">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Footer - Reused from index.html -->
+    <footer class="bg-blue-900 py-12 px-6 mt-auto">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
+                        <span class="text-xl font-bold">Bright Light House Electrical Consultancy</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Energy solutions for a brighter future</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Bright Light House Electrical Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: false,
+        });
+
+         const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-hidden');
+        });
+    </script>
+</body>
+</html>
