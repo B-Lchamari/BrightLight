@@ -1,253 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - Bright Light House Electrical Consultancy</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Light House Electrical Consultancy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-      /* Add any specific styles for about.html here if needed */
-      .yellow-line {
-        height: 4px;
-        background-color: #ffeb3b;
-        width: 100px;
-        margin: 15px auto;
-      }
-
-      /* Mobile navigation styles */
-      .mobile-hidden {
-        display: none;
-      }
-
-      @media (min-width: 768px) {
-        .mobile-hidden {
-          display: flex !important;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #152B47; /* Lighter Blue */
+            color: #E4E4E7; /* Off-White */
         }
-      }
+
+        .gold-line {
+            height: 3px;
+            background-color: #FFDA60; /* Brighter Gold */
+            width: 70px;
+            margin: 15px auto;
+            box-shadow: 0 0 5px rgba(255, 218, 96, 0.6);
+        }
+
+        .professional-title {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 700;
+            color: #FFFFFF; /* White */
+            text-shadow: 0 0 5px rgba(255, 218, 96, 0.4);
+        }
+
+        .card {
+            background-color: #243B55; /* Lighter Card Blue */
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Softer Shadow */
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-primary {
+            background-color: #FFDA60; /* Brighter Gold */
+            color: #152B47; /* Darker Blue */
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #E0B800; /* Darker Gold */
+        }
+        .service-icon {
+            color: #FFDA60; /* Brighter Gold */
+            filter: drop-shadow(0 0 3px rgba(255, 218, 96, 0.7));
+          }
+          .nav-link {
+            position: relative;
+            display: inline-block;
+            padding: 10px 0;
+            text-decoration: none;
+            color: #E4E4E7; /* Off-White */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #FFDA60; /* Brighter Gold */
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #FFDA60; /* Brighter Gold */
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        .footer {
+            background-color: #192A44;
+            color: #E4E4E7;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: top;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-section h4 {
+            font-family: 'Roboto Slab', serif;
+            color: #FFFFFF;
+            border-bottom: 2px solid #FFDA60;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section p, .footer-section ul {
+            color: #E4E4E7;
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid #34495E;
+            margin-top: 10px;
+        }
+
+        .social-links i {
+            font-size: 1.5em;
+            margin: 0 5px;
+            color: #FFDA60;
+        }
     </style>
-  </head>
-  <body class="min-h-screen flex flex-col overflow-x-hidden">
-    <!-- Navigation - Reused from index.html -->
-    <nav class="bg-blue-900/50 backdrop-blur-sm py-4 px-6 sticky top-0 z-50">
-      <div class="container mx-auto flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-          <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
-          <span class="text-xl font-bold">Bright Light House</span>
+</head>
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="bg-[#243B55] py-4 px-6 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-bolt text-[#FFDA60] text-2xl"></i>
+                <a href="index.html" class="text-xl font-bold professional-title">Bright Light House</a>
+            </div>
+            <div id="nav-links" class="md:flex space-x-8 mobile-hidden flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-[#243B55] md:bg-transparent p-6 md:p-0 rounded-b-lg z-40">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-xl" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div
-          id="nav-links"
-          class="md:flex space-x-8 mobile-hidden flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-blue-900/95 md:bg-transparent p-6 md:p-0 rounded-b-lg z-40"
-        >
-          <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
-          <a href="about.html" class="hover:text-yellow-400 transition"
-            >About</a
-          >
-          <a href="services.html" class="hover:text-yellow-400 transition"
-            >Services</a
-          >
-          <a href="gallery.html" class="hover:text-yellow-400 transition"
-            >Gallery</a
-          >
-          <a href="contact.html" class="hover:text-yellow-400 transition"
-            >Contact</a
-          >
-        </div>
-        <button
-          id="mobile-menu-button"
-          class="md:hidden text-xl"
-          aria-label="Open navigation menu"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
     </nav>
 
     <!-- About Section -->
-    <section id="about" class="flex-grow py-20 px-6">
-      <div class="container mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">
-          About Us
-        </h2>
-        <div
-          class="yellow-line mx-auto"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        ></div>
+    <main id="main-content" class="flex-grow py-20 px-6">
+        <section id="about">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 professional-title" data-aos="fade-up">
+                    About Us
+                </h2>
+                <div class="gold-line mx-auto" data-aos="fade-up" data-aos-delay="100"></div>
 
-        <div
-          class="mt-12 text-left max-w-3xl mx-auto text-gray-300"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <p class="mb-6">
-            Welcome to Bright Light House Electrical Consultancy, your trusted
-            partner for comprehensive electrical and energy solutions. Founded
-            with a vision to power a brighter future, we are committed to
-            delivering innovative, reliable, and sustainable electrical services
-            to residential, commercial, and industrial clients.
-          </p>
+                <div class="mt-12 text-left max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card p-8">
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Welcome to Bright Light House Electrical Consultancy, your trusted partner for comprehensive electrical and energy solutions. Founded with a vision to power a brighter future, we are committed to delivering innovative, reliable, and sustainable electrical services to residential, commercial, and industrial clients.
+                        </p>
 
-          <h3
-            class="text-2xl font-bold text-white mb-4"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            Our Story
-          </h3>
-          <p class="mb-6" data-aos="fade-up" data-aos-delay="400">
-            Bright Light House started with a passion for electrical engineering
-            and a dedication to client satisfaction. Over the years, we have
-            grown into a reputable consultancy known for our expertise,
-            professionalism, and commitment to safety. We believe in building
-            long-term relationships with our clients based on trust and quality
-            service.
-          </p>
+                        <h3 class="text-2xl font-bold text-white mb-4 professional-title" data-aos="fade-up" data-aos-delay="300">
+                            Our Story
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed mb-6" data-aos="fade-up" data-aos-delay="400">
+                            Bright Light House started with a passion for electrical engineering and a dedication to client satisfaction. Over the years, we have grown into a reputable consultancy known for our expertise, professionalism, and commitment to safety. We believe in building long-term relationships with our clients based on trust and quality service.
+                        </p>
 
-          <h3
-            class="text-2xl font-bold text-white mb-4"
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
-            Our Mission
-          </h3>
-          <p class="mb-6" data-aos="fade-up" data-aos-delay="600">
-            Our mission is to provide cutting-edge electrical consultancy and
-            services that meet the evolving needs of our clients while promoting
-            energy efficiency and sustainability. We strive to be at the
-            forefront of electrical technology, offering solutions that are not
-            only effective but also environmentally responsible.
-          </p>
+                        <h3 class="text-2xl font-bold text-white mb-4 professional-title" data-aos="fade-up" data-aos-delay="500">
+                            Our Mission
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed mb-6" data-aos="fade-up" data-aos-delay="600">
+                            Our mission is to provide cutting-edge electrical consultancy and services that meet the evolving needs of our clients while promoting energy efficiency and sustainability. We strive to be at the forefront of electrical technology, offering solutions that are not only effective but also environmentally responsible.
+                        </p>
 
-          <h3
-            class="text-2xl font-bold text-white mb-4"
-            data-aos="fade-up"
-            data-aos-delay="700"
-          >
-            Our Values
-          </h3>
-          <ul
-            class="list-disc list-inside space-y-2"
-            data-aos="fade-up"
-            data-aos-delay="800"
-          >
-            <li>
-              <strong class="text-white">Excellence:</strong> We are committed
-              to delivering the highest quality in every project we undertake.
-            </li>
-            <li>
-              <strong class="text-white">Integrity:</strong> We operate with
-              honesty, transparency, and ethical practices.
-            </li>
-            <li>
-              <strong class="text-white">Innovation:</strong> We embrace new
-              technologies and creative approaches to solve complex electrical
-              challenges.
-            </li>
-            <li>
-              <strong class="text-white">Sustainability:</strong> We promote
-              energy-efficient solutions and sustainable practices.
-            </li>
-            <li>
-              <strong class="text-white">Client Focus:</strong> We prioritize
-              our clients' needs and work collaboratively to exceed their
-              expectations.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="py-16 px-6 text-center bg-blue-900/40" data-aos="fade-up">
-      <div class="container mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
-          Ready to Power Your Future?
-        </h2>
-        <p class="text-xl text-gray-300 mb-8">
-          Contact us today for a consultation and let us light up your world
-          with innovative electrical solutions.
-        </p>
-        <a
-          href="contact.html"
-          class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full transition duration-300 inline-block"
-          >Get a Free Quote</a
-        >
-      </div>
-    </section>
-
-    <!-- Footer - Reused from index.html -->
-    <footer class="bg-blue-900 py-12 px-6 mt-auto">
-      <div class="container mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-6 md:mb-0">
-            <div class="flex items-center space-x-2">
-              <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
-              <span class="text-xl font-bold"
-                >Bright Light House Electrical Consultancy</span
-              >
+                        <h3 class="text-2xl font-bold text-white mb-4 professional-title" data-aos="fade-up" data-aos-delay="700">
+                            Our Values
+                        </h3>
+                        <ul class="list-disc list-inside space-y-3 text-gray-300 leading-relaxed" data-aos="fade-up" data-aos-delay="800">
+                            <li><strong>Excellence:</strong> We are committed to delivering the highest quality in every project we undertake.</li>
+                            <li><strong>Integrity:</strong> We operate with honesty, transparency, and ethical practices.</li>
+                            <li><strong>Innovation:</strong> We embrace new technologies and creative approaches to solve complex electrical challenges.</li>
+                            <li><strong>Sustainability:</strong> We promote energy-efficient solutions and sustainable practices.</li>
+                            <li><strong>Client Focus:</strong> We prioritize our clients' needs and work collaboratively to exceed their expectations.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <p class="text-gray-400 mt-2">
-              Energy solutions for a brighter future
-            </p>
-          </div>
+        </section>
+         <!-- Call to Action Section -->
+         <section class="py-16 px-6 text-center bg-[#152B47]" data-aos="fade-up">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 professional-title">
+                    Ready to Discuss Your Project?
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Contact us today for a consultation and discover how we can help you achieve your electrical goals.
+                </p>
+                <a href="contact.html" class="btn-primary inline-block">Get in Touch</a>
+            </div>
+        </section>
+    </main>
 
-          <div class="flex space-x-6">
-            <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-              <i class="fab fa-facebook-f text-xl"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-              <i class="fab fa-twitter text-xl"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
-              <i class="fab fa-linkedin-in text-xl"></i>
-            </a>
-          </div>
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container mx-auto footer-content">
+            <div class="footer-section">
+                <h4 class="professional-title">About Us</h4>
+                <p>Bright Light House is a leading electrical consultancy providing innovative solutions for a brighter future. We are committed to excellence and client satisfaction.</p>
+            </div>
+            <div class="footer-section">
+                <h4 class="professional-title">Contact Information</h4>
+                <p>123 Main Street, Cityville, USA</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@brightlighthouse.com</p>
+            </div>
+            <div class="footer-section">
+                <h4 class="professional-title">Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
         </div>
-
-        <div
-          class="border-t border-blue-800 mt-8 pt-8 text-center text-gray-500"
-        >
-          <p>
-            &copy; 2023 Bright Light House Electrical Consultancy. All rights
-            reserved.
-          </p>
+        <div class="footer-bottom">
+            <p class="text-gray-400">© 2025 Bright Light House Electrical Consultancy. All rights reserved.</p>
         </div>
-      </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({
-        duration: 800,
-        once: false,
-      });
+        AOS.init({
+            duration: 700,
+            once: true,
+            offset: 50,
+        });
 
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const navLinks = document.getElementById("nav-links");
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const navLinks = document.getElementById("nav-links");
 
-      mobileMenuButton.addEventListener("click", () => {
-        navLinks.classList.toggle("mobile-hidden");
-      });
-      // Hide menu when clicking outside on mobile
-      document.addEventListener("click", (e) => {
-        if (
-          !navLinks.contains(e.target) &&
-          !mobileMenuButton.contains(e.target) &&
-          window.innerWidth < 768
-        ) {
-          navLinks.classList.add("mobile-hidden");
-        }
-      });
+        mobileMenuButton.addEventListener("click", () => {
+            navLinks.classList.toggle("mobile-hidden");
+        });
     </script>
-  </body>
+</body>
 </html>
